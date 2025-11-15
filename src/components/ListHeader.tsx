@@ -4,10 +4,19 @@ type Props = {
   allDone: boolean;
   onToggleAll: () => void;
   edit: boolean;
-  onToggleEdit: () => void;
+  isOwner: boolean;
+  onTitleChange: (value: string) => void;
 };
 
-export default function ListHeader({ title, dateStr, allDone, onToggleAll, edit, onToggleEdit }: Props) {
+export default function ListHeader({
+  title,
+  dateStr,
+  allDone,
+  onToggleAll,
+  edit,
+  isOwner,
+  onTitleChange,
+}: Props) {
   return (
     <header className="header">
       <button
@@ -20,7 +29,15 @@ export default function ListHeader({ title, dateStr, allDone, onToggleAll, edit,
       </button>
 
       <div>
-        <h1 className="title">{title}</h1>
+        {edit && isOwner ? (
+          <input
+            className="title-input"
+            value={title}
+            onChange={(e) => onTitleChange(e.target.value)}
+          />
+        ) : (
+          <h1 className="title">{title}</h1>
+        )}
         <div className="date">{dateStr}</div>
       </div>
     </header>

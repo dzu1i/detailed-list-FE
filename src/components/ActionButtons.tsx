@@ -29,7 +29,7 @@ export default function ActionButtons({
     );
   }
 
-  // NORMAL MODE — show Edit / Archive / Delete
+  // NORMAL MODE — Edit / Archive / Delete
   return (
     <div className="footer-actions">
       <button className="edit" onClick={onEdit}>

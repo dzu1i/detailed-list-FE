@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap");
+body, input, button {
+  font-family: "Quicksand", sans-serif;
+}
+
+
 :root{
   --bg:#ecf6ea; --card:#d9eed3; --panel:#eaf5e6;
   --ink:#203120; --muted:#6d836d; --ok:#2e7b49;
